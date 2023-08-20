@@ -1,0 +1,41 @@
+{
+    "public": "./public/",
+    "origins": [
+      "http://localhost:1234"
+    ],
+    "paginate": {
+      "default": 10,
+      "max": 50
+    },
+    "sqlite": {
+      "client": "sqlite3",
+      "connection": "auth.sqlite",
+      "useNullAsDefault": true
+    },
+    "authentication": {
+      "entity": "user",
+      "service": "users",
+      "authStrategies": [
+        "jwt",
+        "local"
+      ],
+      "jwtOptions": {
+        "header": {
+          "typ": "access"
+        },
+        "audience": "https://yourdomain.com",
+        "algorithm": "HS256",
+        "expiresIn": "1d"
+      },
+      "local": {
+        "usernameField": "email",
+        "passwordField": "password"
+      },
+      "oauth": {
+        "google": {
+          "key": "<Client ID>",
+          "secret": "<Client secret>"
+        }
+      }
+    }
+  }
