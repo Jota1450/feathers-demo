@@ -1,7 +1,8 @@
 {
     "public": "./public/",
     "origins": [
-      "http://localhost:1234"
+      "http://localhost:1234",
+      "http://localhost:4200"
     ],
     "paginate": {
       "default": 10,
